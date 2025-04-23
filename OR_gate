@@ -1,0 +1,27 @@
+//OR gate
+module or_gate(a,b,y);
+input a,b;
+output reg y;
+always@(a or b)
+begin
+    if(a==1'b0 && b==1'b0)
+        y=1'b0;
+    else
+        y=1'b1;
+end 
+endmodule
+
+//testbench
+module or_tb;
+ reg a,b;
+ wire y;
+ or_gate o1(a,b,y);
+ initial
+ begin
+    a=1'b0;b=1'b0;
+    a=1'b0;b=1'b1;#10;
+    a=1'b1;b=1'b0;#10;
+    a=1'b1;b=1'b1;#10;
+ #10;
+ end
+endmodule
