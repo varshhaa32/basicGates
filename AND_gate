@@ -17,8 +17,8 @@ module and_tb;
     reg a, b;
     wire y;
 
-// Instantiate the XOR gate
-    and_gate x1 (
+// Instantiate the AND gate
+    and_gate n1 (
         .a(a),
         .b(b),
         .y(y)
