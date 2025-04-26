@@ -1,0 +1,27 @@
+
+module not_gate(a, y);
+    input a;
+    output y;
+    assign y = ~a;
+endmodule
+
+// Testbench
+module not_tb;
+    reg a;
+    wire y;
+     
+    not_gate n1 (
+        .a(a),
+        .y(y)
+    );
+
+    initial begin
+        $display("a | y");
+        
+        a = 1'b0;#10;
+        $display("%b | %b", a, y);
+        
+        a = 1'b1;#10;
+        $display("%b | %b", a, y);
+    end
+endmodule
